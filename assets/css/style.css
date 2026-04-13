@@ -1,1 +1,49 @@
+body {
+    font-family: Arial;
+    margin: 0;
+    padding: 0;
+}
 
+.header {
+    background: #0B2E6B;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.hero {
+    background: #F97316;
+    color: white;
+    text-align: center;
+    padding: 50px;
+}
+
+.btn {
+    background: white;
+    color: #0B2E6B;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+
+.services, .gallery, .why, .contact {
+    padding: 40px;
+    text-align: center;
+}
+
+.service-box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.gallery-box img {
+    width: 45%;
+    margin: 10px;
+}
+
+footer {
+    background: #0B2E6B;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
