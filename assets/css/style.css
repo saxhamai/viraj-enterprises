@@ -59,7 +59,7 @@ body {
 /* Navbar */
 nav {
     background: #fff;
-    padding: 15px 5%;
+    padding: 12px 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -69,13 +69,13 @@ nav {
     z-index: 1000;
 }
 
-.logo-container img { height: 45px; }
-
-.tagline {
-    font-size: 11px;
-    color: #777;
+/* 🔥 LOGO FIX */
+.logo-img {
+    height: 55px;
+    object-fit: contain;
 }
 
+/* Nav Links */
 .nav-links {
     display: flex;
     list-style: none;
@@ -105,8 +105,8 @@ nav {
 
 /* Hero */
 .hero {
-    height: 85vh;
-    background: linear-gradient(rgba(0,43,91,0.85), rgba(0,43,91,0.85)),
+    min-height: 90vh;
+    background: linear-gradient(rgba(0,43,91,0.9), rgba(0,43,91,0.9)),
     url('https://images.unsplash.com/photo-1503387762-592deb58ef4e') center/cover;
     color: #fff;
     display: flex;
@@ -117,14 +117,25 @@ nav {
     padding: 20px;
 }
 
-.hero h1 {
-    font-size: 2.8rem;
-    max-width: 800px;
+/* 🔥 HERO LOGO */
+.hero-logo {
+    height: 80px;
+    margin-bottom: 15px;
 }
 
+/* Hero Text */
+.hero h1 {
+    font-size: 2.8rem;
+    max-width: 850px;
+    line-height: 1.3;
+}
 .hero span { color: var(--primary-orange); }
 
-.hero p { margin-top: 15px; font-size: 1.1rem; }
+.hero p {
+    margin-top: 15px;
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
 
 .hero-buttons {
     margin-top: 25px;
@@ -135,7 +146,7 @@ nav {
 /* Buttons */
 .btn {
     padding: 12px 28px;
-    border-radius: 5px;
+    border-radius: 6px;
     text-decoration: none;
     font-weight: 600;
     transition: 0.3s;
@@ -174,7 +185,7 @@ nav {
 .service-card {
     background: #fff;
     padding: 25px;
-    border-radius: 10px;
+    border-radius: 12px;
     text-align: center;
     transition: 0.3s;
     box-shadow: 0 5px 20px rgba(0,0,0,0.05);
@@ -195,7 +206,7 @@ nav {
 .work-box {
     position: relative;
     overflow: hidden;
-    border-radius: 10px;
+    border-radius: 12px;
 }
 .gallery-img {
     width: 100%;
@@ -210,7 +221,7 @@ nav {
     left: 10px;
     background: var(--primary-orange);
     color: #fff;
-    padding: 5px 12px;
+    padding: 6px 12px;
     font-size: 12px;
     border-radius: 5px;
 }
@@ -302,6 +313,12 @@ footer {
 /* Mobile */
 @media(max-width:768px) {
 
+    .top-bar {
+        flex-direction: column;
+        text-align: center;
+        gap: 5px;
+    }
+
     .nav-links {
         display: none;
         position: absolute;
@@ -325,5 +342,9 @@ footer {
 
     .hero-buttons {
         flex-direction: column;
+    }
+
+    .hero-logo {
+        height: 60px;
     }
 }
