@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (loader) {
         window.addEventListener("load", () => {
             loader.style.opacity = "0";
-            loader.style.transition = "0.5s";
+            loader.style.transition = "opacity 0.5s ease";
 
             setTimeout(() => {
                 loader.style.display = "none";
@@ -30,22 +30,26 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     /* =============================
-       3. Close Menu on Click
+       3. Close Menu on Link Click
     ============================= */
     document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener("click", () => {
-            navLinks.classList.remove('active');
+            if (navLinks && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+            }
         });
     });
 
     /* =============================
-       4. Sticky Navbar Shadow Effect
+       4. Sticky Navbar Shadow
     ============================= */
     const navbar = document.querySelector("nav");
 
     window.addEventListener("scroll", () => {
+        if (!navbar) return;
+
         if (window.scrollY > 50) {
-            navbar.style.boxShadow = "0 4px 15px rgba(0,0,0,0.1)";
+            navbar.style.boxShadow = "0 6px 20px rgba(0,0,0,0.08)";
         } else {
             navbar.style.boxShadow = "none";
         }
@@ -60,9 +64,13 @@ document.addEventListener("DOMContentLoaded", function () {
 function sendToWhatsApp(e) {
     e.preventDefault();
 
-    const name = document.querySelector('.contact-form input[type="text"]').value.trim();
-    const phone = document.querySelector('.contact-form input[type="tel"]').value.trim();
-    const msg = document.querySelector('.contact-form textarea').value.trim();
+    const nameInput = document.querySelector('.contact-form input[type="text"]');
+    const phoneInput = document.querySelector('.contact-form input[type="tel"]');
+    const msgInput = document.querySelector('.contact-form textarea');
+
+    const name = nameInput.value.trim();
+    const phone = phoneInput.value.trim();
+    const msg = msgInput.value.trim();
 
     // Validation
     if (!name || !phone || !msg) {
@@ -75,15 +83,20 @@ function sendToWhatsApp(e) {
         return;
     }
 
-    // Message
+    // WhatsApp Message (clean formatting)
     const message =
-        `Hello Viraj Enterprises,%0a` +
-        `I want service details.%0a%0a` +
-        `Name: ${name}%0a` +
-        `Phone: ${phone}%0a` +
+        `Hello Viraj Enterprises,\n` +
+        `I want service details.\n\n` +
+        `Name: ${name}\n` +
+        `Phone: ${phone}\n` +
         `Requirement: ${msg}`;
 
-    const whatsappURL = `https://wa.me/919967767541?text=${message}`;
+    const whatsappURL = `https://wa.me/919967767541?text=${encodeURIComponent(message)}`;
 
     window.open(whatsappURL, '_blank');
+
+    // Optional UX improvement (reset form)
+    nameInput.value = "";
+    phoneInput.value = "";
+    msgInput.value = "";
 }
