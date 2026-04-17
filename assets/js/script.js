@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (window.scrollY > 50) {
             navbar.style.boxShadow = "0 6px 20px rgba(0,0,0,0.08)";
         } else {
-            navbar.style.boxShadow = "none";
+            navbar.style.boxShadow = "0 2px 10px rgba(0,0,0,0.05)";
         }
     });
 
@@ -64,13 +64,12 @@ document.addEventListener("DOMContentLoaded", function () {
 function sendToWhatsApp(e) {
     e.preventDefault();
 
-    const nameInput = document.querySelector('.contact-form input[type="text"]');
-    const phoneInput = document.querySelector('.contact-form input[type="tel"]');
-    const msgInput = document.querySelector('.contact-form textarea');
+    const form = document.querySelector('.contact-form');
+    if (!form) return;
 
-    const name = nameInput.value.trim();
-    const phone = phoneInput.value.trim();
-    const msg = msgInput.value.trim();
+    const name = form.querySelector('input[type="text"]').value.trim();
+    const phone = form.querySelector('input[type="tel"]').value.trim();
+    const msg = form.querySelector('textarea').value.trim();
 
     // Validation
     if (!name || !phone || !msg) {
@@ -83,7 +82,7 @@ function sendToWhatsApp(e) {
         return;
     }
 
-    // WhatsApp Message (clean formatting)
+    // WhatsApp Message
     const message =
         `Hello Viraj Enterprises,\n` +
         `I want service details.\n\n` +
@@ -91,12 +90,10 @@ function sendToWhatsApp(e) {
         `Phone: ${phone}\n` +
         `Requirement: ${msg}`;
 
-    const whatsappURL = `https://wa.me/919967767541?text=${encodeURIComponent(message)}`;
+    const url = `https://wa.me/919967767541?text=${encodeURIComponent(message)}`;
 
-    window.open(whatsappURL, '_blank');
+    window.open(url, '_blank');
 
-    // Optional UX improvement (reset form)
-    nameInput.value = "";
-    phoneInput.value = "";
-    msgInput.value = "";
+    // Reset form
+    form.reset();
 }
