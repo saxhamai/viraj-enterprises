@@ -73,9 +73,7 @@ nav {
     align-items: center;
     gap: 10px;
 }
-.logo-img {
-    height: 55px;
-}
+.logo-img { height: 55px; }
 .brand-name {
     font-size: 18px;
     font-weight: 700;
@@ -97,6 +95,7 @@ nav {
     color: var(--primary-blue);
     font-weight: 600;
     position: relative;
+    transition: 0.3s;
 }
 .nav-links a::after {
     content: "";
@@ -126,10 +125,7 @@ nav {
     padding: 20px;
 }
 
-.hero-logo {
-    height: 80px;
-    margin-bottom: 15px;
-}
+.hero-logo { height: 80px; margin-bottom: 15px; }
 
 .hero h1 {
     font-size: 2.8rem;
@@ -164,7 +160,7 @@ nav {
 }
 .btn:hover {
     background: var(--primary-blue);
-    transform: translateY(-2px);
+    transform: translateY(-2px) scale(1.02);
 }
 
 .btn-whatsapp { background: #25D366; }
@@ -214,11 +210,12 @@ nav {
     overflow: hidden;
     border-radius: 12px;
 }
-.gallery-img {
+.work-box img {
     width: 100%;
     transition: 0.4s;
+    border-radius: 12px;
 }
-.work-box:hover .gallery-img {
+.work-box:hover img {
     transform: scale(1.08);
 }
 .work-box span {
@@ -234,7 +231,9 @@ nav {
     content: "View Work";
     position: absolute;
     bottom: 0;
+    left: 0;
     width: 100%;
+    padding: 10px;
     text-align: center;
     background: rgba(0,0,0,0.6);
     color: #fff;
@@ -272,9 +271,7 @@ footer {
     grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
     gap: 30px;
 }
-.footer-col h3 {
-    color: var(--primary-orange);
-}
+.footer-col h3 { color: var(--primary-orange); }
 .footer-col p { font-size: 14px; }
 .footer-col a { color: #fff; }
 
@@ -328,7 +325,10 @@ footer {
     }
     .nav-links.active { display: flex; }
 
-    .menu-toggle { display: block; }
+    .menu-toggle {
+        display: block;
+        font-size: 22px;
+    }
 
     .hero h1 { font-size: 2rem; }
 
