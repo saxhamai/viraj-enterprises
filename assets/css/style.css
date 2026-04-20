@@ -409,6 +409,24 @@ footer {
     color: #aaa;
 }
 
+.designed-by {
+    display: block;
+    margin-top: 6px;
+    font-size: 13px;
+    color: #bbb;
+}
+
+.designed-by a {
+    color: var(--primary-orange);   /* 🔥 Orange brand color */
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.designed-by a:hover {
+    color: #fff;                   /* hover pe white */
+    text-decoration: underline;
+}
 /* ===== FIX GAP ABOVE FOOTER ===== */
 #contact {
     margin-top: 0 !important;
