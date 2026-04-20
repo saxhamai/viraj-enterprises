@@ -336,3 +336,36 @@ footer {
 
     .hero-logo { height: 60px; }
 }
+
+.section-subtitle {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 30px;
+    color: #666;
+}
+
+.service-list {
+    text-align: left;
+    margin-top: 10px;
+    padding-left: 15px;
+    font-size: 14px;
+}
+
+.service-list li {
+    margin-bottom: 5px;
+}
+
+.service-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 8px 15px;
+    background: var(--primary-blue);
+    color: #fff;
+    border-radius: 5px;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+.service-btn:hover {
+    background: var(--primary-orange);
+}
