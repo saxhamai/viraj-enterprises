@@ -311,31 +311,36 @@ nav {
 }
 
 /* =====================
-   FOOTER
+   Footer Improvements
 ===================== */
-footer {
-    background: #001630;
+.footer-col i {
+    margin-right: 8px;
+    color: var(--primary-orange);
+}
+
+.footer-col a {
     color: #fff;
-    padding: 50px 5%;
+    text-decoration: none;
 }
-.footer-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
-    gap: 30px;
+.footer-col a:hover {
+    color: var(--primary-orange);
 }
-.footer-col h3 { color: var(--primary-orange); }
-.footer-col p { font-size: 14px; }
 
-/* FORM */
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
+/* Map Button */
+.footer-map-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 6px 12px;
+    background: var(--primary-orange);
+    color: #fff;
+    font-size: 13px;
     border-radius: 5px;
-    border: none;
+    text-decoration: none;
 }
-
+.footer-map-btn:hover {
+    background: #fff;
+    color: var(--primary-orange);
+}
 /* =====================
    WHATSAPP FLOAT
 ===================== */
